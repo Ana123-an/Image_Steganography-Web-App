@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Decode Message</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Decode Message</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required><br>
+      <input type="password" name="password" placeholder="Enter password" required><br>
+      <button type="submit" class="btn">Decode</button>
+    </form>
+
+    {% if decoded_message %}
+      <div class="message-box">
+        <h3>Decoded Message:</h3>
+        <p>{{ decoded_message }}</p>
+      </div>
+    {% endif %}
+    
+    <a href="/" class="back">⬅ Back</a>
+  </div>
+</body>
+</html>
